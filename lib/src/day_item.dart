@@ -27,17 +27,16 @@ class DayItem extends StatelessWidget {
     this.dayNameColor,
   }) : super(key: key);
 
-  final double height = 70.0;
   final double width = 60.0;
 
   _buildDay(BuildContext context) {
     final textStyle = TextStyle(
-      color: available
-        ? dayColor ?? Theme.of(context).colorScheme.secondary
-        : dayColor?.withOpacity(0.5) ??
-        Theme.of(context).colorScheme.secondary.withOpacity(0.5),
-      fontSize: 32,
-      fontWeight: FontWeight.normal);
+        color: available
+            ? dayColor ?? Theme.of(context).colorScheme.secondary
+            : dayColor?.withOpacity(0.5) ??
+                Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+        fontSize: 32,
+        fontWeight: FontWeight.normal);
     final selectedStyle = TextStyle(
       color: activeDayColor ?? Colors.white,
       fontSize: 32,
@@ -49,13 +48,12 @@ class DayItem extends StatelessWidget {
       onTap: available ? onTap as void Function()? : null,
       child: Container(
         decoration: isSelected
-          ? BoxDecoration(
-          color:
-          activeDayBackgroundColor ?? Theme.of(context).colorScheme.secondary,
-          borderRadius: BorderRadius.circular(12.0),
-        )
-          : BoxDecoration(color: Colors.transparent),
-        height: height,
+            ? BoxDecoration(
+                color: activeDayBackgroundColor ??
+                    Theme.of(context).colorScheme.secondary,
+                borderRadius: BorderRadius.circular(12.0),
+              )
+            : BoxDecoration(color: Colors.transparent),
         width: width,
         child: Column(
           children: <Widget>[
